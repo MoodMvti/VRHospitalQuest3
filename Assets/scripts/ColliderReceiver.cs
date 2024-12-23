@@ -204,7 +204,7 @@ public class ColliderReceiver : MonoBehaviourPunCallbacks
 
         GameObject newColliderObject = new GameObject("RemoteMeshCollider");
         newColliderObject.transform.position = Vector3.zero;
-        newColliderObject.transform.rotation = Quaternion.identity;
+        newColliderObject.transform.rotation = Quaternion.Euler(-90f, 0f, 0f); // Establecer rotación x = -90, y = 0, z = 0
         newColliderObject.transform.localScale = Vector3.one;
 
         Mesh mesh = new Mesh();
@@ -241,6 +241,7 @@ public class ColliderReceiver : MonoBehaviourPunCallbacks
         receivedVertexChunks = null;
         receivedTriangleChunks = null;
     }
+
 
     [PunRPC]
     public void AcuseReciboMeshCollider_RPC() { }
